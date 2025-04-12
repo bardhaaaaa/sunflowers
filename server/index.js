@@ -16,6 +16,12 @@ app.use("/teachers", teacherRouter);
 const kidRouter = require('./routes/Kids');
 app.use("/kids", kidRouter);
 
+const mealRouter = require('./routes/Meals');
+app.use("/meals", mealRouter);
+
+const classRouter = require('./routes/Classs');
+app.use("/classs", classRouter);
+
 db.sequelize.sync().then(() => {
     app.listen(3001, () => {
         console.log("server running on port 3001");
