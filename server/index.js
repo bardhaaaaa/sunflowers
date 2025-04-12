@@ -16,6 +16,9 @@ app.use("/teachers", teacherRouter);
 const kidRouter = require('./routes/Kids');
 app.use("/kids", kidRouter);
 
+const enrollRouter = require('./routes/Enrollments');
+app.use("/enrollments", enrollRouter);
+
 const mealRouter = require('./routes/Meals');
 app.use("/meals", mealRouter);
 
