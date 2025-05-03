@@ -37,8 +37,10 @@ Coded by www.creative-tim.com
 
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
-import Teachers from "layouts/teachers";
+import Users from "layouts/users";
 import Kids from "layouts/kids";
+import Teachers from "layouts/teachers";
+import Classs from "layouts/classs";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
@@ -57,6 +59,14 @@ const routes = [
   },
   {
     type: "collapse",
+    name: "Users",
+    key: "users",
+    icon: <Icon fontSize="small">table_view</Icon>,
+    route: "/users",
+    component: <Users />,
+  },
+  {
+    type: "collapse",
     name: "Kids",
     key: "kids",
     icon: <Icon fontSize="small">table_view</Icon>,
@@ -70,6 +80,14 @@ const routes = [
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/teachers",
     component: <Teachers />,
+  },
+  {
+    type: "collapse",
+    name: "Classes",
+    key: "classes",
+    icon: <Icon fontSize="small">table_view</Icon>,
+    route: "/classes",
+    component: <Classs />,
   },
   {
     type: "collapse",
