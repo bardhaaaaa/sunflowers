@@ -33,6 +33,9 @@ app.use("/activities", activityRouter);
 const supplyRouter = require('./routes/Supplies');
 app.use("/supplies", supplyRouter);
 
+const feedbackRouter = require('./routes/Feedbacks');
+app.use("/feedbacks", feedbackRouter);
+
 const signInRouter = require('./routes/SignIn');
 app.use("/signin", signInRouter);
 
