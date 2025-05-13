@@ -75,7 +75,7 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
     }
     console.log("=======================");
     console.log(routes);
-    console.log("User12344:", user);
+    console.log("User test:", user);
     setFormattedRoutes(newRoutes);
   }, [user]);
 
