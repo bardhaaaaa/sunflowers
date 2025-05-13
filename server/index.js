@@ -30,6 +30,9 @@ app.use("/classs", classRouter);
 const activityRouter = require('./routes/Activities');
 app.use("/activities", activityRouter);
 
+const supplyRouter = require('./routes/Supplies');
+app.use("/supplies", supplyRouter);
+
 const signInRouter = require('./routes/SignIn');
 app.use("/signin", signInRouter);
 
