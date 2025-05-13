@@ -39,6 +39,7 @@ Coded by www.creative-tim.com
 import Dashboard from "layouts/dashboard";
 import Users from "layouts/users";
 import Kids from "layouts/kids";
+import HealthRecords from "layouts/healthRecords";
 import Teachers from "layouts/teachers";
 import Classs from "layouts/classs";
 import Enrollments from "layouts/enrollments";
@@ -76,6 +77,14 @@ const routes = [
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/kids",
     component: <Kids />,
+  },
+  {
+    type: "collapse",
+    name: "Health Records",
+    key: "healthRecords",
+    icon: <Icon fontSize="small">table_view</Icon>,
+    route: "/healthRecords",
+    component: <HealthRecords />,
   },
   {
     type: "collapse",
