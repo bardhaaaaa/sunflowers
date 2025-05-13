@@ -43,6 +43,7 @@ import Teachers from "layouts/teachers";
 import Classs from "layouts/classs";
 import Enrollments from "layouts/enrollments";
 import Activities from "layouts/activities";
+import Supplies from "layouts/supplies";
 import Meals from "layouts/meals";
 import Profile from "layouts/profile";
 import SignIn from "layouts/authentication/sign-in";
@@ -107,6 +108,14 @@ const routes = [
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/activities",
     component: <Activities />,
+  },
+  {
+    type: "collapse",
+    name: "Supplies",
+    key: "supplies",
+    icon: <Icon fontSize="small">table_view</Icon>,
+    route: "/supplies",
+    component: <Supplies />,
   },
   {
     type: "collapse",
