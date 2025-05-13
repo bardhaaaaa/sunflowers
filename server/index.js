@@ -24,6 +24,9 @@ app.use("/enrollments", enrollRouter);
 const mealRouter = require('./routes/Meals');
 app.use("/meals", mealRouter);
 
+const healthRouter = require('./routes/HealthRecords');
+app.use("/healthRecords", healthRouter);
+
 const classRouter = require('./routes/Classs');
 app.use("/classs", classRouter);
 
