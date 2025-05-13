@@ -27,6 +27,9 @@ app.use("/meals", mealRouter);
 const classRouter = require('./routes/Classs');
 app.use("/classs", classRouter);
 
+const activityRouter = require('./routes/Activities');
+app.use("/activities", activityRouter);
+
 const signInRouter = require('./routes/SignIn');
 app.use("/signin", signInRouter);
 
