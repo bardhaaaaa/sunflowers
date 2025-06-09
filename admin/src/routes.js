@@ -47,6 +47,7 @@ import Activities from "layouts/activities";
 import Supplies from "layouts/supplies";
 import Meals from "layouts/meals";
 import Feedbacks from "layouts/feedbacks";
+import Logout from "layouts/logout";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
@@ -139,6 +140,14 @@ const routes = [
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/feedbacks",
     component: <Feedbacks />,
+  },
+  {
+    type: "collapse",
+    name: "Logout",
+    key: "logout",
+    icon: <Icon fontSize="small">logout</Icon>,
+    route: "/logout",
+    component: <Logout />, // Logout page component
   },
 ];
 
