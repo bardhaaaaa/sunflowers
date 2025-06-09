@@ -70,6 +70,12 @@ const routes = [
         name: "account",
         collapse: [
           {
+            name: "register kid",
+            route: "/pages/authentication/register",
+            component: <RegisterKid />,
+            key: "registerKid",
+          },
+          {
             name: "log out",
             route: "/logout",
             component: <SignOutPage />,
@@ -86,12 +92,6 @@ const routes = [
             route: "/pages/authentication/sign-up",
             component: <SignUp />,
             key: "signup",
-          },
-          {
-            name: "register kid",
-            route: "/pages/authentication/register",
-            component: <RegisterKid />,
-            key: "registerKid",
           },
         ],
       },

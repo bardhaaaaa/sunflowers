@@ -25,7 +25,10 @@ function AppContent() {
       }
 
       // Handle route visibility based on user authentication
-      if ((!user || user === null) && route.route.includes("logout")) {
+      if (
+        (!user || user === null) &&
+        (route.route.includes("logout") || route.route.includes("register kid"))
+      ) {
         console.log(`Filtering out route ${route.route} because user is not logged in.`);
         return;
       }

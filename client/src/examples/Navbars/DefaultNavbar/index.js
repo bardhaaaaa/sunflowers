@@ -65,6 +65,9 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
       newRoutes[0].collapse[1].collapse = newRoutes[0].collapse[1].collapse.filter(
         (item) => item.name !== "log out"
       );
+      newRoutes[0].collapse[1].collapse = newRoutes[0].collapse[1].collapse.filter(
+        (item) => item.name !== "register kid"
+      );
     } else {
       newRoutes[0].collapse[1].collapse = newRoutes[0].collapse[1].collapse.filter(
         (item) => item.name !== "sign in"
