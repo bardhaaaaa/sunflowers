@@ -42,6 +42,7 @@ import Icon from "@mui/material/Icon";
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import Teachers from "pages/Presentation/sections/Teachers";
+import Meals from "pages/Presentation/sections/Meals";
 import SignIn from "layouts/pages/authentication/sign-in";
 import SignUp from "layouts/pages/authentication/sign-in/sign-up";
 import SignOutPage from "pages/LandingPages/SignOut";
@@ -97,6 +98,12 @@ const routes = [
         route: "/teachers",
         component: <Teachers />,
         key: "teachers",
+      },
+      {
+        name: "daily meals",
+        route: "/meals",
+        component: <Meals />,
+        key: "meals",
       },
     ],
   },

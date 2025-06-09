@@ -31,9 +31,7 @@ router.post("/", async (req, res) => {
       {
         role: user.role,
         email: user.email,
-        emri: user.emri,
-        mbiemri: user.mbiemri,
-        nrTel: user.nrTel,
+        username: user.username,
         userID: user.userID
       },
       process.env.JWT_SECRET || "fallbackSecret",
