@@ -43,6 +43,7 @@ import Icon from "@mui/material/Icon";
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import Teachers from "pages/Presentation/sections/Teachers";
 import Meals from "pages/Presentation/sections/Meals";
+import HealthRecord from "pages/Presentation/sections/HealthRecord";
 import SignIn from "layouts/pages/authentication/sign-in";
 import SignUp from "layouts/pages/authentication/sign-in/sign-up";
 import SignOutPage from "pages/LandingPages/SignOut";
@@ -104,6 +105,12 @@ const routes = [
         route: "/meals",
         component: <Meals />,
         key: "meals",
+      },
+      {
+        name: "kid health record",
+        route: "/healthrecord",
+        component: <HealthRecord />,
+        key: "healthrecord",
       },
     ],
   },
