@@ -41,7 +41,6 @@ import Icon from "@mui/material/Icon";
 
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
-import ContactUs from "layouts/pages/landing-pages/contact-us";
 import SignIn from "layouts/pages/authentication/sign-in";
 import SignUp from "layouts/pages/authentication/sign-in/sign-up";
 import SignOutPage from "pages/LandingPages/SignOut";
@@ -60,11 +59,6 @@ const routes = [
             name: "about us",
             route: "/pages/landing-pages/about-us",
             component: <AboutUs />,
-          },
-          {
-            name: "contact us",
-            route: "/pages/landing-pages/contact-us",
-            component: <ContactUs />,
           },
         ],
       },
