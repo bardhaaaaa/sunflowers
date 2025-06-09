@@ -9,6 +9,7 @@ import {
   CircularProgress,
   FormControl,
   TextField,
+  Button,
 } from "@mui/material";
 import MKBox from "components/MKBox";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
@@ -21,6 +22,11 @@ const HealthRecordPage = () => {
   const [selectedKidID, setSelectedKidID] = useState(null);
   const [healthRecord, setHealthRecord] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const [newAlergjite, setNewAlergjite] = useState("");
+  const [newMedicalConditions, setNewMedicalConditions] = useState("");
+  const [newGjaku, setNewGjaku] = useState("");
+  const [creating, setCreating] = useState(false);
 
   // Fetch kids for the logged in user
   useEffect(() => {
@@ -74,6 +80,25 @@ const HealthRecordPage = () => {
     setSelectedKidID(event.target.value);
   };
 
+  const handleCreateHealthRecord = async () => {
+    if (!selectedKidID) return;
+    setCreating(true);
+    try {
+      const res = await axios.post("http://localhost:3001/healthrecords", {
+        alergjite: newAlergjite,
+        medicalConditions: newMedicalConditions,
+        gjaku: newGjaku,
+        healthRecordKidID: selectedKidID,
+      });
+
+      console.log("Created health record:", res.data);
+      setHealthRecord(res.data);
+    } catch (error) {
+      console.error("Failed to create health record", error);
+    }
+    setCreating(false);
+  };
+
   return (
     <>
       <DefaultNavbar routes={routes} sticky />
@@ -82,7 +107,7 @@ const HealthRecordPage = () => {
           paddingTop: "100px",
           paddingBottom: "40px",
           backgroundColor: "#fce4ec",
-          minHeight: "100vh", // Ensures the background covers the entire viewport height
+          minHeight: "100vh",
         }}
       >
         <Container>
@@ -180,14 +205,75 @@ const HealthRecordPage = () => {
               </Grid>
             </Grid>
           ) : (
-            <Typography
-              variant="h6"
-              mt={4}
-              align="center"
-              sx={{ fontFamily: "Comic Sans MS, sans-serif", color: "#d81b60" }}
-            >
-              No health record found for this kid.
-            </Typography>
+            <>
+              <Typography
+                variant="h6"
+                mt={4}
+                align="center"
+                sx={{ fontFamily: "Comic Sans MS, sans-serif", color: "#d81b60" }}
+              >
+                No health record found for this kid.
+              </Typography>
+
+              <Grid container justifyContent="center" sx={{ mt: 4 }}>
+                <Grid item xs={12} sm={8} md={6}>
+                  <Card
+                    sx={{
+                      borderRadius: "16px",
+                      backgroundColor: "#fff3e0",
+                      padding: 3,
+                      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.15)",
+                    }}
+                  >
+                    <Typography
+                      variant="h6"
+                      gutterBottom
+                      sx={{
+                        fontFamily: "Comic Sans MS, sans-serif",
+                        color: "#fb8c00",
+                        textAlign: "center",
+                      }}
+                    >
+                      Add Health Record
+                    </Typography>
+                    <TextField
+                      fullWidth
+                      label="Allergies"
+                      variant="outlined"
+                      value={newAlergjite}
+                      onChange={(e) => setNewAlergjite(e.target.value)}
+                      sx={{ mb: 2 }}
+                    />
+                    <TextField
+                      fullWidth
+                      label="Medical Conditions"
+                      variant="outlined"
+                      value={newMedicalConditions}
+                      onChange={(e) => setNewMedicalConditions(e.target.value)}
+                      sx={{ mb: 2 }}
+                    />
+                    <TextField
+                      fullWidth
+                      label="Blood Type"
+                      variant="outlined"
+                      value={newGjaku}
+                      onChange={(e) => setNewGjaku(e.target.value)}
+                      sx={{ mb: 2 }}
+                    />
+                    <Button
+                      fullWidth
+                      variant="contained"
+                      color="primary"
+                      onClick={handleCreateHealthRecord}
+                      disabled={creating}
+                      sx={{ fontFamily: "Comic Sans MS, sans-serif", color: "#ffffff" }}
+                    >
+                      {creating ? "Creating..." : "Create Health Record"}
+                    </Button>
+                  </Card>
+                </Grid>
+              </Grid>
+            </>
           )}
         </Container>
       </MKBox>
