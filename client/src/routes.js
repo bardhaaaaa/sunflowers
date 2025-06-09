@@ -43,6 +43,7 @@ import Icon from "@mui/material/Icon";
 import AboutUs from "layouts/pages/landing-pages/about-us";
 import ContactUs from "layouts/pages/landing-pages/contact-us";
 import SignIn from "layouts/pages/authentication/sign-in";
+import SignUp from "layouts/pages/authentication/sign-in/sign-up";
 import SignOutPage from "pages/LandingPages/SignOut";
 
 const routes = [
@@ -81,6 +82,12 @@ const routes = [
             route: "/pages/authentication/sign-in",
             component: <SignIn />,
             key: "signin",
+          },
+          {
+            name: "sign up",
+            route: "/pages/authentication/sign-up",
+            component: <SignUp />,
+            key: "signup",
           },
         ],
       },
