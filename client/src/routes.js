@@ -46,6 +46,7 @@ import Meals from "pages/Presentation/sections/Meals";
 import HealthRecord from "pages/Presentation/sections/HealthRecord";
 import SignIn from "layouts/pages/authentication/sign-in";
 import SignUp from "layouts/pages/authentication/sign-in/sign-up";
+import RegisterKid from "layouts/pages/authentication/sign-in/register";
 import SignOutPage from "pages/LandingPages/SignOut";
 
 const routes = [
@@ -85,6 +86,12 @@ const routes = [
             route: "/pages/authentication/sign-up",
             component: <SignUp />,
             key: "signup",
+          },
+          {
+            name: "register kid",
+            route: "/pages/authentication/register",
+            component: <RegisterKid />,
+            key: "registerKid",
           },
         ],
       },
