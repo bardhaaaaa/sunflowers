@@ -46,9 +46,7 @@ import Enrollments from "layouts/enrollments";
 import Activities from "layouts/activities";
 import Supplies from "layouts/supplies";
 import Meals from "layouts/meals";
-import Profile from "layouts/profile";
-import SignIn from "layouts/authentication/sign-in";
-import SignUp from "layouts/authentication/sign-up";
+import Feedbacks from "layouts/feedbacks";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
@@ -136,27 +134,11 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Profile",
-    key: "profile",
-    icon: <Icon fontSize="small">person</Icon>,
-    route: "/profile",
-    component: <Profile />,
-  },
-  {
-    type: "collapse",
-    name: "Sign In",
-    key: "sign-in",
-    icon: <Icon fontSize="small">login</Icon>,
-    route: "/authentication/sign-in",
-    component: <SignIn />,
-  },
-  {
-    type: "collapse",
-    name: "Sign Up",
-    key: "sign-up",
-    icon: <Icon fontSize="small">assignment</Icon>,
-    route: "/authentication/sign-up",
-    component: <SignUp />,
+    name: "Feedbacks",
+    key: "feedbacks",
+    icon: <Icon fontSize="small">table_view</Icon>,
+    route: "/feedbacks",
+    component: <Feedbacks />,
   },
 ];
 
