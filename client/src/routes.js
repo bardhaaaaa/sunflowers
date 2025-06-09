@@ -41,6 +41,7 @@ import Icon from "@mui/material/Icon";
 
 // Pages
 import AboutUs from "layouts/pages/landing-pages/about-us";
+import Teachers from "pages/Presentation/sections/Teachers";
 import SignIn from "layouts/pages/authentication/sign-in";
 import SignUp from "layouts/pages/authentication/sign-in/sign-up";
 import SignOutPage from "pages/LandingPages/SignOut";
@@ -90,7 +91,14 @@ const routes = [
   {
     name: "sections",
     icon: <Icon>view_day</Icon>,
-    collapse: [],
+    collapse: [
+      {
+        name: "our teachers",
+        route: "/teachers",
+        component: <Teachers />,
+        key: "teachers",
+      },
+    ],
   },
 ];
 
